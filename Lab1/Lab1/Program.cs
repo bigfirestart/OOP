@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using Lab1.Exception;
+using Lab1.Parser;
 
 
 namespace Lab1 {
@@ -19,8 +21,9 @@ namespace Lab1 {
             try {
                 parser = IniParser.Parse(args[0]);
             }
-            catch (Exception e) {
+            catch (ParserException e) {
                 Console.WriteLine(e.Message);
+                return;
             }
             
             //reading data 
@@ -35,7 +38,6 @@ namespace Lab1 {
             
             //trying extract
             if (!Enum.GetNames(typeof(AllowedTypes)).Contains(type)) return;
-            if (parser == null) return;
             try {
                 switch (type) {
                     case "Int":
@@ -50,7 +52,7 @@ namespace Lab1 {
                 }
                 
             }
-            catch (Exception e) {
+            catch (ParserException e) {
                 Console.WriteLine(e.Message);
             }
         }

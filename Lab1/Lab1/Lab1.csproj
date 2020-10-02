@@ -38,7 +38,15 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Parser.cs" />
+        <Compile Include="Exception\FileCleaningException.cs" />
+        <Compile Include="Exception\FileParsingException.cs" />
+        <Compile Include="Exception\InvalidValueTypeException.cs" />
+        <Compile Include="Exception\ParserExeption.cs" />
+        <Compile Include="Exception\PropertyNotFoundExeption.cs" />
+        <Compile Include="Exception\SectionNotFoundExeption.cs" />
+        <Compile Include="Parser\IniFileBuilder.cs" />
+        <Compile Include="Parser\IniParser.cs" />
+        <Compile Include="Parser\ParsedIniFIle.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
