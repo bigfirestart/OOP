@@ -18,9 +18,8 @@ namespace Lab2.Storage
             return Shops[^1];
         }
 
-        public Product CreateProduct(string productName)
-        {
-            Products.Add(new Product() {Id = Products.Count, Name = productName});
+        public Product CreateProduct(string productName) {
+            Products.Add(new Product(Products.Count, productName));
             return Products[^1];
         }
 

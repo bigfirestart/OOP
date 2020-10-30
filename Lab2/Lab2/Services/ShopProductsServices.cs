@@ -149,22 +149,15 @@ namespace Lab2.Services
 
         public (Shop, double) WhereIsCheapestConsigment(List<AmountedProduct> consigment)
         {
-            var minTotal = Double.MaxValue;
-            var cheapestShop = new Shop();
-            foreach (var shop in _storage.Shops)
-            {
-                double? shopTotal = BuyConsignment(shop.Id, consigment);
-                if (shopTotal != null)
-                {
-                    if (shopTotal < minTotal)
-                    {
-                        minTotal = (double) shopTotal;
-                        cheapestShop = shop;
-                    }
-                }
-            }
+            // LINQ
+            var result = _storage.Shops.Select(shop => {
+                return new {
+                    Shop = shop,
+                    Total = BuyConsignment(shop.Id, consigment)
+                };
+            }).Where(x => x.Total.HasValue).Min();
+            return (result.Shop, result.Total.Value);
 
-            return (cheapestShop, minTotal);
         }
     }
 }
