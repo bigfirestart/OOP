@@ -10,7 +10,7 @@ namespace Lab2
     {
         static void PrintJson(Object obj)
         {
-            Console.WriteLine(JsonSerializer.Serialize(obj, new JsonSerializerOptions() { WriteIndented = true }));
+            Console.WriteLine(JsonSerializer.Serialize(obj));
         }
         static void Main(string[] args)
         {
@@ -25,7 +25,6 @@ namespace Lab2
             var pr1 = storage.CreateProduct("Milk");
             var pr2 = storage.CreateProduct("Milk1");
             var pr3 = storage.CreateProduct("Milk2");
-
             storage.CreateProduct("Milk3");
             storage.CreateProduct("Milk4");
             
@@ -37,23 +36,18 @@ namespace Lab2
             services.AddProductsToShop(0, consigment);
             
             //4
-            Console.WriteLine(services.FindCheapestShopByProduct(1));
+            PrintJson(services.FindCheapestShopByProduct(1).Name);
             
             //5
-            Console.WriteLine(services.BuyInShopByPrice(0, 1000.0));
+            PrintJson(services.BuyInShopByPrice(0, 1000.0));
             
             //6
             var buyConsigment = new List<AmountedProduct>();
             buyConsigment.Add(new AmountedProduct() {Product = pr1, Amount = 11});
             buyConsigment.Add(new AmountedProduct() {Product = pr2, Amount = 90});
             buyConsigment.Add(new AmountedProduct() {Product = pr3, Amount = 100});
-            var result = services.BuyConsignment(0, buyConsigment, true);
-            if (result.HasValue) {
-                // ... PrintJson();
-            } else {
-                
-            }
-
+            PrintJson(services.BuyConsignment(0, buyConsigment, true));
+            
             //7
             var cheapestConsigment = new List<AmountedProduct>();
             cheapestConsigment.Add(new AmountedProduct() {Product = pr1, Amount = 2});

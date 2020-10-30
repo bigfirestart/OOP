@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json;
 using Lab2.Models;
 using Lab2.Storage;
 
@@ -16,23 +15,23 @@ namespace Lab2.Services
             _storage = storage;
         }
 
-        public string AddProductsToShop(int shopId, List<PricedAmountedProduct> consigment)
+        public IEnumerable<ShopProduct> AddProductsToShop(int shopId, List<PricedAmountedProduct> consigment)
         {
-            var startIndex = _storage.GetShopProducts().Count;
+            var startIndex = _storage.ShopProducts.Count;
             foreach (var pricedAmountedProduct in consigment)
             {
                 _storage.CreateShopProduct(shopId, pricedAmountedProduct.Product.Id, pricedAmountedProduct.Price,
                     pricedAmountedProduct.Amount);
             }
 
-            return JsonSerializer.Serialize(_storage.GetShopProducts().GetRange(startIndex, consigment.Count));
+            return _storage.ShopProducts.GetRange(startIndex, consigment.Count);
         }
 
-        public string FindCheapestShopByProduct(int productId)
+        public Shop FindCheapestShopByProduct(int productId)
         {
-            var product = _storage.GetProducts()[productId];
+            var product = _storage.Products[productId];
             ShopProduct cheapestShopProduct = new ShopProduct() {Price = Double.MaxValue};
-            foreach (var shopProduct in _storage.GetShopProducts())
+            foreach (var shopProduct in _storage.ShopProducts)
             {
                 if (shopProduct.Product == product && shopProduct.Price < cheapestShopProduct.Price)
                 {
@@ -45,15 +44,15 @@ namespace Lab2.Services
                 return null;
             }
 
-            return JsonSerializer.Serialize(cheapestShopProduct.Shop);
+            return cheapestShopProduct.Shop;
         }
 
         public List<AmountedProduct> BuyInShopByPrice(int shopId, double totalMaxPrice)
         {
             var res = new List<AmountedProduct>();
-            foreach (var shopProduct in _storage.GetShopProducts())
+            foreach (var shopProduct in _storage.ShopProducts)
             {
-                var shop = _storage.GetShops()[shopId];
+                var shop = _storage.Shops[shopId];
                 if (shopProduct.Shop == shop && shopProduct.Price < totalMaxPrice)
                 {
                     res.Add(new AmountedProduct()
@@ -77,7 +76,7 @@ namespace Lab2.Services
                     var price = 0.0;
                     if (commitBuy)
                     {
-                        price = _storage.BuyProductInShop(0, amountedProduct.Product.Id, amountedProduct.Amount);
+                        price = BuyProductInShop(0, amountedProduct.Product.Id, amountedProduct.Amount);
                     }
                     else
                     {
@@ -126,17 +125,46 @@ namespace Lab2.Services
             return true;
         }
 
-        public (string, double) WhereIsCheapestConsigment(List<AmountedProduct> consigment)
+        public double BuyProductInShop(int shopId, int productId, int amount = 1)
         {
-            // LINQ
-            var result = _storage.GetShops().Select(shop => {
-                return new {
-                    Shop = shop,
-                    Total = BuyConsignment(shop.Id, consigment)
-                };
-            }).Where(x => x.Total.HasValue).Min();
-            return (JsonSerializer.Serialize(result.Shop), result.Total.Value);
+            foreach (var shopProduct in _storage.ShopProducts)
+            {
+                if (shopProduct.Shop.Id == shopId && shopProduct.Product.Id == productId)
+                {
+                    if (shopProduct.Amount > 1)
+                    {
+                        shopProduct.Amount = shopProduct.Amount - amount;
+                    }
+                    else if (shopProduct.Amount == 1)
+                    {
+                        _storage.ShopProducts.Remove(shopProduct);
+                    }
 
+                    return shopProduct.Price * amount;
+                }
+            }
+
+            return 0;
+        }
+
+        public (Shop, double) WhereIsCheapestConsigment(List<AmountedProduct> consigment)
+        {
+            var minTotal = Double.MaxValue;
+            var cheapestShop = new Shop();
+            foreach (var shop in _storage.Shops)
+            {
+                double? shopTotal = BuyConsignment(shop.Id, consigment);
+                if (shopTotal != null)
+                {
+                    if (shopTotal < minTotal)
+                    {
+                        minTotal = (double) shopTotal;
+                        cheapestShop = shop;
+                    }
+                }
+            }
+
+            return (cheapestShop, minTotal);
         }
     }
 }

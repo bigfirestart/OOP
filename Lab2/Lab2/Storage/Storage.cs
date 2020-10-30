@@ -3,39 +3,56 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Lab2.Models;
+using Lab2.Services;
 
 namespace Lab2.Storage
 {
-    public class Storage
+    public class Storage: ShopProduct
     {
-        public List<Shop> Shops = new List<Shop>();
-        public List<Product> Products = new List<Product>();
-        public List<ShopProduct> ShopProducts = new List<ShopProduct>();
+        private List<Shop> Shops = new List<Shop>();
+        private List<Product> Products = new List<Product>();
+        private List<ShopProduct> ShopProducts = new List<ShopProduct>();
+        
+        List<T> Clone<T>(IEnumerable<T> oldList)
+        {
+            return new List<T>(oldList);
+        }
 
         public Shop CreateShop(string shopName)
         {
-            Shops.Add(new Shop() {Id = Shops.Count, Name = shopName});
-            return Shops[^1];
+            Shops.Add(new Shop(Shops.Count, shopName));
+            return Shops.Last();
         }
 
+        public List<Shop> GetShops()
+        {
+            return Clone(this.Shops);
+        }
+
+        public List<Product> GetProducts()
+        {
+            return Clone(this.Products);
+        }
+
+        public List<ShopProduct> GetShopProducts()
+        {
+            return Clone(this.ShopProducts);
+        }
         public Product CreateProduct(string productName) {
             Products.Add(new Product(Products.Count, productName));
-            return Products[^1];
+            return Products.Last();
         }
 
         public ShopProduct CreateShopProduct(int shopId, int productId, double price, int amount)
         {
             var shop = Shops[shopId];
             var product = Products[productId];
-            ShopProducts.Add(new ShopProduct()
+            ShopProducts.Add(new ShopProduct(ShopProducts.Count, shop, product)
             {
-                Id = ShopProducts.Count,
-                Shop = shop,
-                Product = product,
                 Price = price,
                 Amount = amount
             });
-            return ShopProducts[^1];
+            return ShopProducts.Last();
         }
 
         public ShopProduct CreateShopProduct(string shopName, string productName, double price, int amount)
@@ -53,6 +70,28 @@ namespace Lab2.Storage
                 throw new Exception("No such Product in Shop");
             };
             return res;
+        }
+
+        public double BuyProductInShop(int shopId, int productId, int amount = 1)
+        {
+            foreach (var shopProduct in ShopProducts)
+            {
+                if (shopProduct.Shop.Id == shopId && shopProduct.Product.Id == productId)
+                {
+                    if (shopProduct.Amount > 1)
+                    {
+                        shopProduct.Amount = shopProduct.Amount - amount;
+                    }
+                    else if (shopProduct.Amount == 1)
+                    {
+                        ShopProducts.Remove(shopProduct);
+                    }
+
+                    return shopProduct.Price * amount;
+                }
+            }
+
+            return 0;
         }
     }
 }
