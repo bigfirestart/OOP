@@ -1,7 +1,7 @@
 namespace Lab2.Models
 {
     public class ShopProduct 
-    { 
+    {
         public int Id { get; set; }
         public Shop Shop { get; set; }
         public Product Product { get; set; }

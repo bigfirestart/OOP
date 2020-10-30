@@ -10,7 +10,7 @@ namespace Lab2
     {
         static void PrintJson(Object obj)
         {
-            Console.WriteLine(JsonSerializer.Serialize(obj));
+            Console.WriteLine(JsonSerializer.Serialize(obj, new JsonSerializerOptions() { WriteIndented = true }));
         }
         static void Main(string[] args)
         {
@@ -25,6 +25,7 @@ namespace Lab2
             var pr1 = storage.CreateProduct("Milk");
             var pr2 = storage.CreateProduct("Milk1");
             var pr3 = storage.CreateProduct("Milk2");
+
             storage.CreateProduct("Milk3");
             storage.CreateProduct("Milk4");
             
@@ -46,8 +47,13 @@ namespace Lab2
             buyConsigment.Add(new AmountedProduct() {Product = pr1, Amount = 11});
             buyConsigment.Add(new AmountedProduct() {Product = pr2, Amount = 90});
             buyConsigment.Add(new AmountedProduct() {Product = pr3, Amount = 100});
-            PrintJson(services.BuyConsignment(0, buyConsigment, true));
-            
+            var result = services.BuyConsignment(0, buyConsigment, true);
+            if (result.HasValue) {
+                // ... PrintJson();
+            } else {
+                
+            }
+
             //7
             var cheapestConsigment = new List<AmountedProduct>();
             cheapestConsigment.Add(new AmountedProduct() {Product = pr1, Amount = 2});
