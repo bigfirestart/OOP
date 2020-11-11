@@ -1,0 +1,2 @@
+class CommonRace: Race<ITransport> { }
+
