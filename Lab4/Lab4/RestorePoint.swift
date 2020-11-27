@@ -16,6 +16,7 @@ class RestorePoint: Equatable {
     
     private(set) var files: [BackupFile] = []
     private(set) var creationDateTime: Date = Date()
+    private(set) var originalPoint: RestorePoint? = nil
     
     var size: Float {
         get {
@@ -112,6 +113,7 @@ class RestorePoint: Equatable {
                 copiedPoint.files.append(BackupFile(name: file.path, size: sizeDif))
             }
         }
+        copiedPoint.originalPoint = self
         return copiedPoint
     }
 }

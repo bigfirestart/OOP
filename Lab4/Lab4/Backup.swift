@@ -12,6 +12,25 @@ class Backup {
             throw BackupError.PointCommitError
         }
     }
+        
+    private func removeNullPointerPoints() {
+        var indexesToRemove: [Int] = []
+        for (index, point) in self.restoreHistory.enumerated() {
+            if point.originalPoint != nil {
+                if !self.restoreHistory.contains(point) {
+                    indexesToRemove.append(index)
+                }
+            }
+        }
+        removePoints(indexesToRemove: indexesToRemove)
+        
+    }
+    
+    private func removePoints(indexesToRemove: [Int]) {
+        self.restoreHistory = self.restoreHistory.enumerated()
+            .filter { !indexesToRemove.contains($0.offset) }
+            .map { $0.element }
+    }
     
     func commitRestorePointDiffrance(point: RestorePoint) throws {
         do {
@@ -26,10 +45,12 @@ class Backup {
     
     func filterByPointSize(maxSize: Float){
         self.restoreHistory = SizeFilter.filter(backup: self, param: maxSize)
+        removeNullPointerPoints()
     }
     
     func filterByPointDate(minDateTime: Date){
         self.restoreHistory = DateFilter.filter(backup: self, param: minDateTime)
+        removeNullPointerPoints()
     }
     
     func filterByPointsCount(maxCount: Int) throws {
@@ -39,6 +60,7 @@ class Backup {
         if (maxCount < restoreHistory.count) {
             self.restoreHistory = CountFilter.filter(backup: self, param: maxCount)
         }
+        removeNullPointerPoints()
     }
     
     private func getFiltersResults(filters: [FilterType]) -> [[RestorePoint]] {
@@ -71,14 +93,12 @@ class Backup {
                 indexesToRemove.append(index)
             }
         }
-        self.restoreHistory = self.restoreHistory.enumerated()
-            .filter { !indexesToRemove.contains($0.offset) }
-            .map { $0.element }
+        removePoints(indexesToRemove: indexesToRemove)
+        removeNullPointerPoints()
     }
     
     func ORFilter(filters: [FilterType]) {
         let filtersResults = getFiltersResults(filters: filters)
-        
         var indexesToRemove: [Int] = []
         for (index, point) in self.restoreHistory.enumerated() {
             var deleteCondition = false
@@ -92,9 +112,8 @@ class Backup {
                 indexesToRemove.append(index)
             }
         }
-        self.restoreHistory = self.restoreHistory.enumerated()
-            .filter { !indexesToRemove.contains($0.offset) }
-            .map { $0.element }
+        removePoints(indexesToRemove: indexesToRemove)
+        removeNullPointerPoints()
     }
 }
 
