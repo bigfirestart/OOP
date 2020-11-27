@@ -46,12 +46,10 @@ class Backup {
         for filter in filters {
             switch filter {
                 case .count(let count):
-                    print(CountFilter.filter(backup: self, param: count).count)
                     filtersResults.append(CountFilter.filter(backup: self, param: count))
                 case .size(let size):
                     filtersResults.append(SizeFilter.filter(backup: self, param: size))
                 case .date(let date):
-                    print(DateFilter.filter(backup: self, param: date).count)
                     filtersResults.append(DateFilter.filter(backup: self, param: date))
             }
         }
@@ -64,7 +62,7 @@ class Backup {
         for (index, point) in self.restoreHistory.enumerated() {
             var deleteCondition = true
             for res in filtersResults {
-                if !res.contains(point) {
+                if res.contains(point) {
                     deleteCondition = false
                     break
                 }
@@ -80,11 +78,12 @@ class Backup {
     
     func ORFilter(filters: [FilterType]) {
         let filtersResults = getFiltersResults(filters: filters)
+        
         var indexesToRemove: [Int] = []
         for (index, point) in self.restoreHistory.enumerated() {
             var deleteCondition = false
             for res in filtersResults {
-                if res.contains(point) {
+                if !res.contains(point) {
                     deleteCondition = true
                     break
                 }
@@ -93,7 +92,6 @@ class Backup {
                 indexesToRemove.append(index)
             }
         }
-        print(indexesToRemove)
         self.restoreHistory = self.restoreHistory.enumerated()
             .filter { !indexesToRemove.contains($0.offset) }
             .map { $0.element }

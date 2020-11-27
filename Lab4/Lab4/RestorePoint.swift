@@ -3,10 +3,15 @@ import Foundation
 class RestorePoint: Equatable {
     
     static func == (lhs: RestorePoint, rhs: RestorePoint) -> Bool {
-        if (lhs.files == rhs.files) {
-            return true
+        if !(lhs.creationDateTime == rhs.creationDateTime){
+            return false
         }
-        return false
+        for file in lhs.files {
+            if !rhs.files.contains(file) {
+                return false
+            }
+        }
+        return true
     }
     
     private(set) var files: [BackupFile] = []

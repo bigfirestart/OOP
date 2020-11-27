@@ -71,18 +71,18 @@ class Lab4Tests: XCTestCase {
         XCTAssertNoThrow(try backup.commitRestorePoint(point: rp))
         sleep(1)
         XCTAssertNoThrow(try backup.commitRestorePoint(point: rp))
-        let deadline = Date()
         sleep(1)
         XCTAssertNoThrow(try backup.commitRestorePoint(point: rp))
+        let deadline = Date()
         sleep(1)
         XCTAssertNoThrow(try backup.commitRestorePoint(point: rp))
         sleep(1)
         
         XCTAssertEqual(backup.restoreHistory.count, 4)
         
-        backup.ORFilter(filters: [.count(count: 2), .date(date: deadline)])
+        backup.ANDFilter(filters: [.count(count: 2), .date(date: deadline)])
         
-        XCTAssertEqual(backup.restoreHistory.count, 0)
+        XCTAssertEqual(backup.restoreHistory.count, 2)
         
         
     }
