@@ -2,6 +2,11 @@ import Foundation
 
 class Backup {
     private(set) var restoreHistory: [RestorePoint] = []
+    private(set) var type: SaveType
+    
+    public init(type: SaveType){
+        self.type = type
+    }
     
     func commitRestorePoint(point: RestorePoint) throws {
         do {
@@ -126,4 +131,9 @@ enum FilterType {
     case count(count: Int)
     case size(size: Float)
     case date(date: Date)
+}
+
+enum SaveType {
+    case SeparateBackup
+    case CommonBackup
 }

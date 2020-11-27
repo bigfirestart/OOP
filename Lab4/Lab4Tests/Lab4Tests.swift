@@ -54,7 +54,6 @@ class Lab4Tests: XCTestCase {
         XCTAssertEqual(backup.restoreHistory.count, 3)
         backup.filterByPointSize(maxSize: 1)
         XCTAssertEqual(backup.restoreHistory.count, 1)
-        
     }
     
     func testBackup3() throws {
@@ -83,8 +82,5 @@ class Lab4Tests: XCTestCase {
         backup.ANDFilter(filters: [.count(count: 2), .date(date: deadline)])
         
         XCTAssertEqual(backup.restoreHistory.count, 2)
-        
-        
     }
-    
 }
