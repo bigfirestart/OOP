@@ -25,6 +25,6 @@ commonRace.registerTransport(transport: MagicCarpet())
 commonRace.registerTransport(transport: Mortar())
 commonRace.registerTransport(transport: Broom())
 
-try print(commonRace.start())
+try print("Winner: \(commonRace.start())")
 
 
