@@ -85,16 +85,22 @@ class Backup {
     
     func ANDFilter(filters: [FilterType]) {
         let filtersResults = getFiltersResults(filters: filters)
-        var indexesToRemove: [Int] = []
+        var indexesToLeave: [Int] = []
         for (index, point) in self.restoreHistory.enumerated() {
-            var deleteCondition = true
+            var leaveCondition = true
             for res in filtersResults {
-                if res.contains(point) {
-                    deleteCondition = false
+                if !res.contains(point) {
+                    leaveCondition = false
                     break
                 }
             }
-            if deleteCondition {
+            if leaveCondition {
+                indexesToLeave.append(index)
+            }
+        }
+        var indexesToRemove: [Int] = []
+        for (index, _) in self.restoreHistory.enumerated() {
+            if !indexesToLeave.contains(index) {
                 indexesToRemove.append(index)
             }
         }
