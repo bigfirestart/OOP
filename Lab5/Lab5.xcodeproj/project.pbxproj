@@ -9,10 +9,23 @@
 /* Begin PBXBuildFile section */
 		E70A614C257A537B005F8624 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A614B257A537B005F8624 /* main.swift */; };
 		E72A57FB257A664E00E7A764 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A57FA257A664E00E7A764 /* Client.swift */; };
-		E72A57FE257A683100E7A764 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A57FD257A683100E7A764 /* Bank.swift */; };
-		E72A5801257A683900E7A764 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A5800257A683900E7A764 /* Account.swift */; };
-		E72A5804257A6A2500E7A764 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A5803257A6A2500E7A764 /* Transaction.swift */; };
+		E72A57FE257A683100E7A764 /* AbstractBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A57FD257A683100E7A764 /* AbstractBank.swift */; };
 		E72A5807257A6A4100E7A764 /* GlobalTransactionSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A5806257A6A4100E7A764 /* GlobalTransactionSystem.swift */; };
+		E7B2DF55257E7F8A00D2F0FF /* DepositAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2DF54257E7F8A00D2F0FF /* DepositAccount.swift */; };
+		E7B2DF5B257E864F00D2F0FF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A5803257A6A2500E7A764 /* Transaction.swift */; };
+		E7B2DF5E257E8B5700D2F0FF /* TinkoffBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2DF5D257E8B5700D2F0FF /* TinkoffBank.swift */; };
+		E7B2DF62257E8ED900D2F0FF /* DebitAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2DF61257E8ED900D2F0FF /* DebitAccount.swift */; };
+		E7B2DF65257E8EE800D2F0FF /* CreditAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2DF64257E8EE800D2F0FF /* CreditAccount.swift */; };
+		E7B2DF6E257E8FB300D2F0FF /* Lab5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2DF6D257E8FB300D2F0FF /* Lab5Tests.swift */; };
+		E7B2DF75257E8FD900D2F0FF /* AbstractBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A57FD257A683100E7A764 /* AbstractBank.swift */; };
+		E7B2DF76257E8FD900D2F0FF /* TinkoffBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2DF5D257E8B5700D2F0FF /* TinkoffBank.swift */; };
+		E7B2DF77257E8FD900D2F0FF /* DepositAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2DF54257E7F8A00D2F0FF /* DepositAccount.swift */; };
+		E7B2DF78257E8FD900D2F0FF /* DebitAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2DF61257E8ED900D2F0FF /* DebitAccount.swift */; };
+		E7B2DF79257E8FD900D2F0FF /* CreditAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2DF64257E8EE800D2F0FF /* CreditAccount.swift */; };
+		E7B2DF7A257E8FD900D2F0FF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A5803257A6A2500E7A764 /* Transaction.swift */; };
+		E7B2DF7B257E8FD900D2F0FF /* GlobalTransactionSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A5806257A6A4100E7A764 /* GlobalTransactionSystem.swift */; };
+		E7B2DF7C257E8FD900D2F0FF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A614B257A537B005F8624 /* main.swift */; };
+		E7B2DF7D257E8FD900D2F0FF /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A57FA257A664E00E7A764 /* Client.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,14 +44,27 @@
 		E70A6148257A537B005F8624 /* Lab5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab5; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70A614B257A537B005F8624 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E72A57FA257A664E00E7A764 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		E72A57FD257A683100E7A764 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
-		E72A5800257A683900E7A764 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		E72A57FD257A683100E7A764 /* AbstractBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractBank.swift; sourceTree = "<group>"; };
 		E72A5803257A6A2500E7A764 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		E72A5806257A6A4100E7A764 /* GlobalTransactionSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTransactionSystem.swift; sourceTree = "<group>"; };
+		E7B2DF54257E7F8A00D2F0FF /* DepositAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositAccount.swift; sourceTree = "<group>"; };
+		E7B2DF5D257E8B5700D2F0FF /* TinkoffBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffBank.swift; sourceTree = "<group>"; };
+		E7B2DF61257E8ED900D2F0FF /* DebitAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebitAccount.swift; sourceTree = "<group>"; };
+		E7B2DF64257E8EE800D2F0FF /* CreditAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditAccount.swift; sourceTree = "<group>"; };
+		E7B2DF6B257E8FB300D2F0FF /* Lab5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B2DF6D257E8FB300D2F0FF /* Lab5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab5Tests.swift; sourceTree = "<group>"; };
+		E7B2DF6F257E8FB300D2F0FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E70A6145257A537B005F8624 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7B2DF68257E8FB300D2F0FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -52,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				E70A614A257A537B005F8624 /* Lab5 */,
+				E7B2DF6C257E8FB300D2F0FF /* Lab5Tests */,
 				E70A6149257A537B005F8624 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				E70A6148257A537B005F8624 /* Lab5 */,
+				E7B2DF6B257E8FB300D2F0FF /* Lab5Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,14 +95,50 @@
 		E70A614A257A537B005F8624 /* Lab5 */ = {
 			isa = PBXGroup;
 			children = (
+				E7B2DF57257E84C300D2F0FF /* Banks */,
+				E7B2DF53257E7F3D00D2F0FF /* Accounts */,
+				E7B2DF52257E7F3400D2F0FF /* Transactions */,
 				E70A614B257A537B005F8624 /* main.swift */,
 				E72A57FA257A664E00E7A764 /* Client.swift */,
-				E72A5806257A6A4100E7A764 /* GlobalTransactionSystem.swift */,
-				E72A57FD257A683100E7A764 /* Bank.swift */,
-				E72A5800257A683900E7A764 /* Account.swift */,
-				E72A5803257A6A2500E7A764 /* Transaction.swift */,
 			);
 			path = Lab5;
+			sourceTree = "<group>";
+		};
+		E7B2DF52257E7F3400D2F0FF /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				E72A5803257A6A2500E7A764 /* Transaction.swift */,
+				E72A5806257A6A4100E7A764 /* GlobalTransactionSystem.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		E7B2DF53257E7F3D00D2F0FF /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				E7B2DF54257E7F8A00D2F0FF /* DepositAccount.swift */,
+				E7B2DF61257E8ED900D2F0FF /* DebitAccount.swift */,
+				E7B2DF64257E8EE800D2F0FF /* CreditAccount.swift */,
+			);
+			path = Accounts;
+			sourceTree = "<group>";
+		};
+		E7B2DF57257E84C300D2F0FF /* Banks */ = {
+			isa = PBXGroup;
+			children = (
+				E72A57FD257A683100E7A764 /* AbstractBank.swift */,
+				E7B2DF5D257E8B5700D2F0FF /* TinkoffBank.swift */,
+			);
+			path = Banks;
+			sourceTree = "<group>";
+		};
+		E7B2DF6C257E8FB300D2F0FF /* Lab5Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E7B2DF6D257E8FB300D2F0FF /* Lab5Tests.swift */,
+				E7B2DF6F257E8FB300D2F0FF /* Info.plist */,
+			);
+			path = Lab5Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +161,23 @@
 			productReference = E70A6148257A537B005F8624 /* Lab5 */;
 			productType = "com.apple.product-type.tool";
 		};
+		E7B2DF6A257E8FB300D2F0FF /* Lab5Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7B2DF70257E8FB300D2F0FF /* Build configuration list for PBXNativeTarget "Lab5Tests" */;
+			buildPhases = (
+				E7B2DF67257E8FB300D2F0FF /* Sources */,
+				E7B2DF68257E8FB300D2F0FF /* Frameworks */,
+				E7B2DF69257E8FB300D2F0FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lab5Tests;
+			productName = Lab5Tests;
+			productReference = E7B2DF6B257E8FB300D2F0FF /* Lab5Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -107,6 +188,9 @@
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					E70A6147257A537B005F8624 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					E7B2DF6A257E8FB300D2F0FF = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
@@ -125,21 +209,52 @@
 			projectRoot = "";
 			targets = (
 				E70A6147257A537B005F8624 /* Lab5 */,
+				E7B2DF6A257E8FB300D2F0FF /* Lab5Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E7B2DF69257E8FB300D2F0FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E70A6144257A537B005F8624 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E72A57FE257A683100E7A764 /* Bank.swift in Sources */,
-				E72A5801257A683900E7A764 /* Account.swift in Sources */,
+				E7B2DF5B257E864F00D2F0FF /* Transaction.swift in Sources */,
+				E72A57FE257A683100E7A764 /* AbstractBank.swift in Sources */,
+				E7B2DF62257E8ED900D2F0FF /* DebitAccount.swift in Sources */,
+				E7B2DF5E257E8B5700D2F0FF /* TinkoffBank.swift in Sources */,
 				E72A5807257A6A4100E7A764 /* GlobalTransactionSystem.swift in Sources */,
+				E7B2DF55257E7F8A00D2F0FF /* DepositAccount.swift in Sources */,
 				E72A57FB257A664E00E7A764 /* Client.swift in Sources */,
+				E7B2DF65257E8EE800D2F0FF /* CreditAccount.swift in Sources */,
 				E70A614C257A537B005F8624 /* main.swift in Sources */,
-				E72A5804257A6A2500E7A764 /* Transaction.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7B2DF67257E8FB300D2F0FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7B2DF75257E8FD900D2F0FF /* AbstractBank.swift in Sources */,
+				E7B2DF76257E8FD900D2F0FF /* TinkoffBank.swift in Sources */,
+				E7B2DF77257E8FD900D2F0FF /* DepositAccount.swift in Sources */,
+				E7B2DF78257E8FD900D2F0FF /* DebitAccount.swift in Sources */,
+				E7B2DF79257E8FD900D2F0FF /* CreditAccount.swift in Sources */,
+				E7B2DF7A257E8FD900D2F0FF /* Transaction.swift in Sources */,
+				E7B2DF7B257E8FD900D2F0FF /* GlobalTransactionSystem.swift in Sources */,
+				E7B2DF7C257E8FD900D2F0FF /* main.swift in Sources */,
+				E7B2DF7D257E8FD900D2F0FF /* Client.swift in Sources */,
+				E7B2DF6E257E8FB300D2F0FF /* Lab5Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +398,42 @@
 			};
 			name = Release;
 		};
+		E7B2DF71257E8FB300D2F0FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9J6689CCTF;
+				INFOPLIST_FILE = Lab5Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Zvaro.Lab5Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E7B2DF72257E8FB300D2F0FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9J6689CCTF;
+				INFOPLIST_FILE = Lab5Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Zvaro.Lab5Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -300,6 +451,15 @@
 			buildConfigurations = (
 				E70A6150257A537B005F8624 /* Debug */,
 				E70A6151257A537B005F8624 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7B2DF70257E8FB300D2F0FF /* Build configuration list for PBXNativeTarget "Lab5Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7B2DF71257E8FB300D2F0FF /* Debug */,
+				E7B2DF72257E8FB300D2F0FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

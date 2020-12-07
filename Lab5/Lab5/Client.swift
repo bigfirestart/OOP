@@ -9,6 +9,7 @@ struct Client {
         self.secondName = secondName
     }
 }
+
 struct Adress {
     private(set) var country: String
     private(set) var city: String
