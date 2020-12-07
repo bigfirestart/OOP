@@ -1,4 +1,5 @@
 import Foundation
+
 class DepositAccount: Account {
     private(set) var procent: Float
     private(set) var startDate: Date?

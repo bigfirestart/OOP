@@ -11,13 +11,11 @@ class GTS {
     private(set) var connectedBanks: [AbstractBank] = []
     private(set) var transactionsHistory: [Transaction] = []
     
-    //private
-    func accountWithdrawMoney(account: Account, amount: Float) {
+    fileprivate func accountWithdrawMoney(account: Account, amount: Float) {
         account.amount = account.amount - amount
     }
     
-    //private
-    func accountAddMoney(account: Account, amount: Float) {
+    fileprivate func accountAddMoney(account: Account, amount: Float) {
         account.amount = account.amount + amount
     }
     
@@ -64,3 +62,14 @@ enum GTSError: Error {
     case LowFromAccountBalance
     case CantCommentSimularTransactions
 }
+
+
+class GTSBackdoor: GTS {
+    override func accountWithdrawMoney(account: Account, amount: Float){
+        super.accountWithdrawMoney(account: account, amount: amount)
+    }
+    override func accountAddMoney(account: Account, amount: Float) {
+        super.accountAddMoney(account: account, amount: amount)
+    }
+}
+

@@ -15,8 +15,9 @@ class Lab5Tests: XCTestCase {
         let accountFrom = Account(client: client)
         let accountTo = Account(client: client)
         let gts = GTS()
+        let bd = GTSBackdoor()
 
-        gts.accountAddMoney(account: accountFrom, amount: 200)
+        bd.accountAddMoney(account: accountFrom, amount: 200)
 
         XCTAssertEqual(accountFrom.amount, 200)
         let transaction = Transaction(fromAccount: accountFrom, toAccount: accountTo, amount: 10)
