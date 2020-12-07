@@ -9,6 +9,7 @@ class AbstractBank {
             let _ = try gts.commitTransaction(transaction: transaction)
             depositAccount.setDuration(durationDays: durationDays)
             self.accounts.append(depositAccount)
+            gts.lockAccount(account: depositAccount)
             return depositAccount
         }
         catch{

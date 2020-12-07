@@ -1,6 +1,7 @@
 class Account {
     private(set) var client: Client
     fileprivate(set) var amount: Float = 0.0
+    fileprivate var lock = false
     
     init(client: Client) {
         self.client = client
@@ -35,6 +36,9 @@ class GTS {
         if (historyContainsUUID(uuid: transaction.uuid)) {
             throw GTSError.LowFromAccountBalance
         }
+        if (transaction.fromAccount.lock || transaction.toAccount.lock){
+            throw GTSError.LockedAccountTransaction
+        }
         
         accountWithdrawMoney(account: transaction.fromAccount, amount: transaction.amount)
         accountAddMoney(account: transaction.toAccount, amount: transaction.amount)
@@ -56,11 +60,16 @@ class GTS {
         }
     }
     
+    func lockAccount(account: Account){
+        account.lock = true
+    }
+    
 }
 
 enum GTSError: Error {
     case LowFromAccountBalance
     case CantCommentSimularTransactions
+    case LockedAccountTransaction
 }
 
 

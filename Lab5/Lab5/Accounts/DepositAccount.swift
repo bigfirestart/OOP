@@ -22,7 +22,7 @@ class DepositAccount: Account {
         return depositEnd! < Date()
     }
     
-    func getRaymentAmount() -> Float {
+    func getPaymentAmount() -> Float {
         return super.amount * (1 + self.procent/100)
     }
 
