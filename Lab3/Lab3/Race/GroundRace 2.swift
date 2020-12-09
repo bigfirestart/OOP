@@ -1,0 +1,1 @@
+class GroundRace: Race<GroundTransport> { }

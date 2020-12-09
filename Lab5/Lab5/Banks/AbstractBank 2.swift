@@ -17,11 +17,6 @@ class AbstractBank {
             throw BankError.AccountCreationError
         }
     }
-    
-    func pay(fromAccount: Account, toAccount: Account, amount: Float){
-        //if debit -> take from debit
-        //if credit -> take from master
-    }
 }
 
 enum BankError: Error {

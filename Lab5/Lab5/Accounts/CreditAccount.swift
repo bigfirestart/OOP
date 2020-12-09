@@ -1,8 +1,13 @@
-//
-//  CreditAccount.swift
-//  Lab5
-//
-//  Created by Кирилл Лукьянов on 07.12.2020.
-//
-
-import Foundation
+class creditAccount: Account {
+    var creditLimit: Float = 0.0
+    var creditFromAccount: Account
+    
+    init(creditFromAccount: Account, client: Client) {
+        self.creditFromAccount = creditFromAccount
+        super.init(client: client)
+    }
+    
+    override func getAccount() -> Account {
+        return self.creditFromAccount
+    }
+}

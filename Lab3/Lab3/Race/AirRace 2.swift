@@ -1,0 +1,1 @@
+class AirRace: Race<AirTransport> { }

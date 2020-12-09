@@ -6,10 +6,6 @@ class Account {
     init(client: Client) {
         self.client = client
     }
-    
-    func getAccount() -> Account {
-        return self
-    }
 }
 
 class GTS {
@@ -66,10 +62,6 @@ class GTS {
     
     func lockAccount(account: Account){
         account.lock = true
-    }
-    
-    func unlockAccount(account: Account){
-        account.lock = false
     }
     
 }

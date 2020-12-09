@@ -4,8 +4,6 @@ class DepositAccount: Account {
     private(set) var procent: Float
     private(set) var startDate: Date?
     private(set) var durationDays: Int?
-    
-    //really neaded ???
     private(set) var masterAccount: Account
     
     init(masterAccount: Account, client: Client, procent: Float){
