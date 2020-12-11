@@ -11,10 +11,10 @@
 		</dict>
 		<key>Lab5Tests.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>1</integer>
-			<key>isShown</key>
-			<false />
 		</dict>
 	</dict>
 </dict>

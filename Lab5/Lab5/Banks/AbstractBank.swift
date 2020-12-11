@@ -27,7 +27,7 @@ class AbstractBank {
         }
     }
     
-    func createCreditAccount(client: Client, masterAccount: Account, amount: Float, creditLimit: Float, comission: Float) -> Account {
+    func createCreditAccount(client: Client, masterAccount: Account, creditLimit: Float, comission: Float) -> Account {
         let creditAccount = CreditAccount(creditFromAccount: masterAccount, client: client, creditLimit: creditLimit, comission: comission)
         return creditAccount
         

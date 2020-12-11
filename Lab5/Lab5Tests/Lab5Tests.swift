@@ -32,6 +32,21 @@ class Lab5Tests: XCTestCase {
 
         XCTAssertEqual(accountFrom.amount, 200)
         XCTAssertEqual(accountTo.amount, 0)
-
+    }
+    
+    func testAccounts(){
+        let bankClient = Client(firstName: "Mark", secondName: "1")
+        let master = Account(client: bankClient)
+        let bank = AbstractBank(masterAccount: master)
+        let hack = GTSBackdoor()
+        hack.accountAddMoney(account: master, amount: 1000.0)
+        
+        let userClient = Client(firstName: "User", secondName: "2")
+        let userDebit = bank.createDebitAccount(client: userClient, procent: 3.2)
+        let userCredit = bank.createCreditAccount(client: userClient, masterAccount: master, creditLimit: 500, comission: 100 )
+       
+        XCTAssertTrue(bank.pay(fromAccount: userCredit, toAccount: userDebit, amount: 100))
+        XCTAssertEqual(userDebit.amount, 100)
+        XCTAssertEqual(userCredit.amount, 0)
     }
 }
