@@ -11,6 +11,8 @@
 		E72A57FB257A664E00E7A764 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A57FA257A664E00E7A764 /* Client.swift */; };
 		E72A57FE257A683100E7A764 /* AbstractBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A57FD257A683100E7A764 /* AbstractBank.swift */; };
 		E72A5807257A6A4100E7A764 /* GlobalTransactionSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A5806257A6A4100E7A764 /* GlobalTransactionSystem.swift */; };
+		E77D7BFB2582B97C00B8589B /* DateObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77D7BFA2582B97C00B8589B /* DateObserver.swift */; };
+		E77D7BFC2582B97C00B8589B /* DateObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77D7BFA2582B97C00B8589B /* DateObserver.swift */; };
 		E7B2DF55257E7F8A00D2F0FF /* DepositAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2DF54257E7F8A00D2F0FF /* DepositAccount.swift */; };
 		E7B2DF5B257E864F00D2F0FF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A5803257A6A2500E7A764 /* Transaction.swift */; };
 		E7B2DF5E257E8B5700D2F0FF /* TinkoffBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2DF5D257E8B5700D2F0FF /* TinkoffBank.swift */; };
@@ -47,6 +49,7 @@
 		E72A57FD257A683100E7A764 /* AbstractBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractBank.swift; sourceTree = "<group>"; };
 		E72A5803257A6A2500E7A764 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		E72A5806257A6A4100E7A764 /* GlobalTransactionSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTransactionSystem.swift; sourceTree = "<group>"; };
+		E77D7BFA2582B97C00B8589B /* DateObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateObserver.swift; sourceTree = "<group>"; };
 		E7B2DF54257E7F8A00D2F0FF /* DepositAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositAccount.swift; sourceTree = "<group>"; };
 		E7B2DF5D257E8B5700D2F0FF /* TinkoffBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffBank.swift; sourceTree = "<group>"; };
 		E7B2DF61257E8ED900D2F0FF /* DebitAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebitAccount.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 			children = (
 				E72A57FD257A683100E7A764 /* AbstractBank.swift */,
 				E7B2DF5D257E8B5700D2F0FF /* TinkoffBank.swift */,
+				E77D7BFA2582B97C00B8589B /* DateObserver.swift */,
 			);
 			path = Banks;
 			sourceTree = "<group>";
@@ -185,7 +189,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					E70A6147257A537B005F8624 = {
 						CreatedOnToolsVersion = 12.3;
@@ -230,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7B2DF5B257E864F00D2F0FF /* Transaction.swift in Sources */,
+				E77D7BFB2582B97C00B8589B /* DateObserver.swift in Sources */,
 				E72A57FE257A683100E7A764 /* AbstractBank.swift in Sources */,
 				E7B2DF62257E8ED900D2F0FF /* DebitAccount.swift in Sources */,
 				E7B2DF5E257E8B5700D2F0FF /* TinkoffBank.swift in Sources */,
@@ -255,6 +260,7 @@
 				E7B2DF7C257E8FD900D2F0FF /* main.swift in Sources */,
 				E7B2DF7D257E8FD900D2F0FF /* Client.swift in Sources */,
 				E7B2DF6E257E8FB300D2F0FF /* Lab5Tests.swift in Sources */,
+				E77D7BFC2582B97C00B8589B /* DateObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +385,7 @@
 		E70A6150257A537B005F8624 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9J6689CCTF;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -390,6 +397,7 @@
 		E70A6151257A537B005F8624 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9J6689CCTF;
 				ENABLE_HARDENED_RUNTIME = YES;

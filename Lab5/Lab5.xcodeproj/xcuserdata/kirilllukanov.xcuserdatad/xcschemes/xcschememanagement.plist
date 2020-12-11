@@ -4,15 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Lab5.xcscheme_^#shared#^_</key>
+		<key>Lab5.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Lab5Tests.xcscheme_^#shared#^_</key>
+		<key>Lab5Tests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+			<key>isShown</key>
+			<false />
 		</dict>
 	</dict>
 </dict>

@@ -5,11 +5,8 @@ class DepositAccount: Account {
     private(set) var startDate: Date?
     private(set) var durationDays: Int?
     
-    //really neaded ???
-    private(set) var masterAccount: Account
     
     init(masterAccount: Account, client: Client, procent: Float){
-        self.masterAccount =  masterAccount
         self.procent = procent
         super.init(client: client)
     }
@@ -24,7 +21,7 @@ class DepositAccount: Account {
         return depositEnd! < Date()
     }
     
-    func getPaymentAmount() -> Float {
+    override func getAccountAfterActionAmountChange() -> Float {
         return super.amount * (1 + self.procent/100)
     }
 

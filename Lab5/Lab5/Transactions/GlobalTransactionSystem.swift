@@ -7,9 +7,12 @@ class Account {
         self.client = client
     }
     
-    func getAccount() -> Account {
+    func prepareAccountPayment(amount: Float) -> Account {
         return self
     }
+    func afterTransactionNotice(account: Account, amount: Float) { }
+    
+    func getAccountAfterActionAmountChange() throws -> Float { return 0.0 }
 }
 
 class GTS {
