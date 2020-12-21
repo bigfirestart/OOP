@@ -16,4 +16,4 @@ let _ = try gts.commitTransaction(transaction: transaction)
 
 print(master.amount)
 
-sleep(10)
+sleep(10000)
