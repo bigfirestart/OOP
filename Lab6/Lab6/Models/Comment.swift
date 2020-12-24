@@ -12,4 +12,11 @@ class Comment {
         self.task = toTask
         self.employee  = createdBy
     }
+    
+    func copy() -> Comment {
+        let newComment = Comment(text: self.text, toTask: self.task, createdBy: self.employee)
+        newComment.uuid = self.uuid
+        newComment.time = self.time
+        return newComment
+    }
 }

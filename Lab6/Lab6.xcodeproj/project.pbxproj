@@ -15,6 +15,8 @@
 		E75AA2CE2591404D00E8D55A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75AA2CC2591404D00E8D55A /* Comment.swift */; };
 		E75AA2D4259142AF00E8D55A /* Subordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75AA2D3259142AF00E8D55A /* Subordinates.swift */; };
 		E75AA2D5259142AF00E8D55A /* Subordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75AA2D3259142AF00E8D55A /* Subordinates.swift */; };
+		E75AA2D92591458400E8D55A /* TaskAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75AA2D82591458400E8D55A /* TaskAction.swift */; };
+		E75AA2DA2591458400E8D55A /* TaskAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75AA2D82591458400E8D55A /* TaskAction.swift */; };
 		E7672F63258A216C00572274 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7672F62258A216C00572274 /* main.swift */; };
 		E7672F71258A21D400572274 /* Lab6_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7672F70258A21D400572274 /* Lab6_Tests.swift */; };
 		E7672F78258A21F700572274 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7672F62258A216C00572274 /* main.swift */; };
@@ -22,6 +24,18 @@
 		E7672F7D258A220D00572274 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7672F7B258A220D00572274 /* Task.swift */; };
 		E7672F81258A231400572274 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7672F80258A231400572274 /* Employee.swift */; };
 		E7672F82258A231400572274 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7672F80258A231400572274 /* Employee.swift */; };
+		E787E6C4259231F300869C1D /* TasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6C3259231F300869C1D /* TasksController.swift */; };
+		E787E6C5259231F300869C1D /* TasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6C3259231F300869C1D /* TasksController.swift */; };
+		E787E6C9259248B900869C1D /* EmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6C8259248B900869C1D /* EmployeeController.swift */; };
+		E787E6CA259248B900869C1D /* EmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6C8259248B900869C1D /* EmployeeController.swift */; };
+		E787E6CF2592497700869C1D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6CE2592497700869C1D /* MainController.swift */; };
+		E787E6D02592497700869C1D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6CE2592497700869C1D /* MainController.swift */; };
+		E787E6D62593987100869C1D /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6D52593987100869C1D /* Report.swift */; };
+		E787E6D72593987100869C1D /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6D52593987100869C1D /* Report.swift */; };
+		E787E6DB2593A76100869C1D /* Sprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6DA2593A76100869C1D /* Sprint.swift */; };
+		E787E6DC2593A76100869C1D /* Sprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6DA2593A76100869C1D /* Sprint.swift */; };
+		E787E6E02593B17300869C1D /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6DF2593B17300869C1D /* ReportController.swift */; };
+		E787E6E12593B17300869C1D /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787E6DF2593B17300869C1D /* ReportController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +55,7 @@
 		E75AA2C625913EDD00E8D55A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		E75AA2CC2591404D00E8D55A /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		E75AA2D3259142AF00E8D55A /* Subordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subordinates.swift; sourceTree = "<group>"; };
+		E75AA2D82591458400E8D55A /* TaskAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAction.swift; sourceTree = "<group>"; };
 		E7672F5F258A216C00572274 /* Lab6 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab6; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7672F62258A216C00572274 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E7672F6E258A21D400572274 /* Lab6_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab6_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +63,12 @@
 		E7672F72258A21D400572274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7672F7B258A220D00572274 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		E7672F80258A231400572274 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		E787E6C3259231F300869C1D /* TasksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksController.swift; sourceTree = "<group>"; };
+		E787E6C8259248B900869C1D /* EmployeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeController.swift; sourceTree = "<group>"; };
+		E787E6CE2592497700869C1D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		E787E6D52593987100869C1D /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		E787E6DA2593A76100869C1D /* Sprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprint.swift; sourceTree = "<group>"; };
+		E787E6DF2593B17300869C1D /* ReportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +105,9 @@
 				E7672F7B258A220D00572274 /* Task.swift */,
 				E75AA2CC2591404D00E8D55A /* Comment.swift */,
 				E75AA2D3259142AF00E8D55A /* Subordinates.swift */,
+				E75AA2D82591458400E8D55A /* TaskAction.swift */,
+				E787E6D52593987100869C1D /* Report.swift */,
+				E787E6DA2593A76100869C1D /* Sprint.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,9 +133,11 @@
 		E7672F61258A216C00572274 /* Lab6 */ = {
 			isa = PBXGroup;
 			children = (
+				E787E6C02592307100869C1D /* Controllers */,
 				E75AA2CB2591403000E8D55A /* Models */,
 				E75AA2C325913D8700E8D55A /* Storage */,
 				E7672F62258A216C00572274 /* main.swift */,
+				E787E6CE2592497700869C1D /* MainController.swift */,
 			);
 			path = Lab6;
 			sourceTree = "<group>";
@@ -123,6 +149,16 @@
 				E7672F72258A21D400572274 /* Info.plist */,
 			);
 			path = Lab6_Tests;
+			sourceTree = "<group>";
+		};
+		E787E6C02592307100869C1D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E787E6C3259231F300869C1D /* TasksController.swift */,
+				E787E6C8259248B900869C1D /* EmployeeController.swift */,
+				E787E6DF2593B17300869C1D /* ReportController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,10 +252,17 @@
 				E75AA2C725913EDD00E8D55A /* Logger.swift in Sources */,
 				E75AA2CD2591404D00E8D55A /* Comment.swift in Sources */,
 				E7672F7C258A220D00572274 /* Task.swift in Sources */,
+				E787E6C9259248B900869C1D /* EmployeeController.swift in Sources */,
 				E75AA2BF25913D3700E8D55A /* Storage.swift in Sources */,
+				E787E6DB2593A76100869C1D /* Sprint.swift in Sources */,
+				E75AA2D92591458400E8D55A /* TaskAction.swift in Sources */,
+				E787E6E02593B17300869C1D /* ReportController.swift in Sources */,
 				E7672F81258A231400572274 /* Employee.swift in Sources */,
+				E787E6CF2592497700869C1D /* MainController.swift in Sources */,
 				E75AA2D4259142AF00E8D55A /* Subordinates.swift in Sources */,
+				E787E6C4259231F300869C1D /* TasksController.swift in Sources */,
 				E7672F63258A216C00572274 /* main.swift in Sources */,
+				E787E6D62593987100869C1D /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,14 +270,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E787E6CA259248B900869C1D /* EmployeeController.swift in Sources */,
+				E787E6DC2593A76100869C1D /* Sprint.swift in Sources */,
+				E75AA2DA2591458400E8D55A /* TaskAction.swift in Sources */,
 				E75AA2D5259142AF00E8D55A /* Subordinates.swift in Sources */,
 				E7672F78258A21F700572274 /* main.swift in Sources */,
+				E787E6D02592497700869C1D /* MainController.swift in Sources */,
+				E787E6D72593987100869C1D /* Report.swift in Sources */,
 				E75AA2C825913EDD00E8D55A /* Logger.swift in Sources */,
 				E7672F82258A231400572274 /* Employee.swift in Sources */,
 				E75AA2CE2591404D00E8D55A /* Comment.swift in Sources */,
+				E787E6C5259231F300869C1D /* TasksController.swift in Sources */,
 				E7672F7D258A220D00572274 /* Task.swift in Sources */,
 				E7672F71258A21D400572274 /* Lab6_Tests.swift in Sources */,
 				E75AA2C025913D3700E8D55A /* Storage.swift in Sources */,
+				E787E6E12593B17300869C1D /* ReportController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
