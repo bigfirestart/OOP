@@ -45,12 +45,12 @@ class TaskController {
         return self.storage.addTaskEmployee(taskUUID: taskUUID, employeeUUID: employee.uuid)
     }
     
-    func getTimeActionTasks (fromTime: Date, toTime: Date) {
-        
+    func getTimeActionTasks (fromTime: Date, toTime: Date) -> [TaskAction] {
+        return self.storage.getTimeLimetedActions(fromTime: fromTime, toTime: toTime)
     }
     
-    func getEmployeeActionTasks () {
-        
+    func getEmployeeActionTasks (employee: Employee) -> [TaskAction]{
+        return self.storage.getAllEmployeeActions(employeeUUID: employee.uuid)
     }
     
     

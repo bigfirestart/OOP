@@ -12,7 +12,7 @@ class Subordinates {
     }
     
     func copy() -> Subordinates {
-        let newSubordinates = Subordinates(employee: self.employee, manager: self.manager)
+        let newSubordinates = Subordinates(employee: self.employee.copy(), manager: self.manager.copy())
         newSubordinates.uuid = self.uuid
         return newSubordinates
     }

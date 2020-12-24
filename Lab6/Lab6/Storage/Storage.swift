@@ -65,6 +65,26 @@ class Storage {
         return newTaskAction.copy()
     }
     
+    func getTimeLimetedActions(fromTime: Date, toTime: Date) -> [TaskAction] {
+        var resActions: [TaskAction] = []
+        for (_, action) in self.taskActions {
+            if (action.creationTime > fromTime) || (action.creationTime < toTime) {
+                resActions.append(action.copy())
+            }
+        }
+        return resActions
+    }
+    
+    func getAllEmployeeActions(employeeUUID: UUID) -> [TaskAction] {
+        var resActions: [TaskAction] = []
+        for (_, action) in self.taskActions {
+            if (action.creator.uuid == employeeUUID) {
+                resActions.append(action.copy())
+            }
+        }
+        return resActions
+    }
+    
     //employee
     func createEmployee(name: String) -> Employee {
         let newEmployee = Employee(name: name)
@@ -78,7 +98,9 @@ class Storage {
     }
     
     
-    func createSubordinates(employee: Employee, manager: Employee) -> Subordinates {
+    func createSubordinates(employeeUUID: UUID, managerUUID: UUID) -> Subordinates {
+        let employee = self.emloyees[employeeUUID]!
+        let manager = self.emloyees[managerUUID]!
         let newSubordinates = Subordinates(employee: employee, manager: manager)
         self.subordinates[newSubordinates.uuid] = newSubordinates
         return newSubordinates.copy()
@@ -106,16 +128,62 @@ class Storage {
     
     //reports
     
-    func createReport() {
-        
+    func createReport(creatorUUID: UUID) -> Report {
+        let creator = self.emloyees[creatorUUID]!
+        let newReport = Report(creator: creator)
+        self.reports[newReport.uuid] = newReport
+        return newReport.copy()
     }
     
-    func changeReportText(reportUUID: UUID, newText: String){
-        
+    func getReport(reportUUID: UUID) -> Report? {
+        return self.reports[reportUUID]?.copy()
     }
     
-    func createSprint() {
-        
+    func changeReportText(reportUUID: UUID, newText: String) -> Report?{
+        self.reports[reportUUID]?.text = newText
+        return self.reports[reportUUID]?.copy()
     }
+    
+    func addReportTask(reportUUID: UUID, taskUUID: UUID) -> Report? {
+        let task = self.tasks[taskUUID]!
+        self.reports[reportUUID]?.finishedTasks.append(task)
+        return self.reports[reportUUID]?.copy()
+    }
+    
+    func getAllEmployeeReports(employeeUUID: UUID) -> [Report] {
+        var resReports: [Report] = []
+        for (_, report) in self.reports {
+            if report.creator.uuid == employeeUUID{
+                resReports.append(report.copy())
+            }
+        }
+        return resReports
+    }
+    
+    //sprints
+    
+    func createSprint(managerUUID: UUID, startDate: Date, endDate: Date) -> Sprint {
+        let manager = self.emloyees[managerUUID]!
+        let newSprint = Sprint(manager: manager, startDate: startDate, endDate: endDate)
+        self.sprints[newSprint.uuid] = newSprint
+        return newSprint.copy()
+    }
+    
+    func getSprint(sprintUUID: UUID) -> Sprint? {
+        return self.sprints[sprintUUID]
+    }
+    
+    func changeSprintText(sprintUUID: UUID, newText: String) -> Sprint? {
+        self.sprints[sprintUUID]?.text = newText
+        return self.sprints[sprintUUID]?.copy()
+    }
+    
+    func addSprintReport(sprintUUID: UUID, reportUUID: UUID) -> Sprint? {
+        let report = self.reports[reportUUID]!
+        self.sprints[sprintUUID]?.reports.append(report)
+        return self.sprints[sprintUUID]?.copy()
+    }
+    
+    
 }
 

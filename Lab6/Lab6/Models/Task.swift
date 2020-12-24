@@ -20,7 +20,9 @@ class Task {
     func copy() -> Task {
         let taskCopy = Task(name: self.name, creator: self.creator)
         taskCopy.uuid = self.uuid
-        taskCopy.employees = self.employees
+        for employee in self.employees {
+            taskCopy.employees.append(employee.copy())
+        }
         taskCopy.status = self.status
         return taskCopy
     }

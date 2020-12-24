@@ -8,8 +8,8 @@ class EmployeeController {
         self.storage = storage
     }
     
-    func createEmployee() {
-        
+    func createEmployee(name: String) -> Employee {
+        return storage.createEmployee(name: name)
     }
     
     func isYourEmployee(requester: Employee, employee: Employee) -> Bool {
@@ -18,6 +18,6 @@ class EmployeeController {
     }
     
     func addEmployeeManager(requester: Employee, employee: Employee, manager: Employee) {
-        let _ = storage.createSubordinates(employee: employee, manager: manager)
+        let _ = storage.createSubordinates(employeeUUID: employee.uuid, managerUUID: manager.uuid)
     }
 }

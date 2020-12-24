@@ -14,7 +14,7 @@ class TaskAction {
     }
     
     func copy() -> TaskAction {
-        let newTaskAction = TaskAction(creator: self.creator, task: self.task, actionType: self.taskActionType)
+        let newTaskAction = TaskAction(creator: self.creator.copy(), task: self.task.copy(), actionType: self.taskActionType)
         newTaskAction.uuid = self.uuid
         newTaskAction.creationTime = self.creationTime
         return newTaskAction
